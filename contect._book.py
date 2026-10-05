@@ -10,3 +10,11 @@ while True:
         phone = input("Enter Phone Number : ")
         contact[name]=phone
         print("Contact add Sucessfully ")
+
+    elif choice == "2":
+        if len(contact)==0:
+            print("No contact found !")
+        else:
+            print("Contact : ")
+            for name,phone in contact.item():
+                print(name," : ",phone)
