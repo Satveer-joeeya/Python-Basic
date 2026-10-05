@@ -1,3 +1,12 @@
-contact=[]
-new_contact=[]
-choice = input("Select a choice \n 1.show all contact \n 2.add new contact \n 3.exit")
+contact = {}
+while True:
+    print("Select option between 1-6\n")
+    print("\n 1. Add Contact \n 2.View Contact \n 3.Search Contact")
+    print("4.Update Contact \n 5.Delete Contact \n 6.Exit")
+    choice = input("Enter your choice !")
+
+    if choice == "1":
+        name = input("Enter Name : ")
+        phone = input("Enter Phone Number : ")
+        contact[name]=phone
+        print("Contact add Sucessfully ")
