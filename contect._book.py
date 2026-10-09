@@ -16,5 +16,34 @@ while True:
             print("No contact found !")
         else:
             print("Contact : ")
-            for name,phone in contact.item():
+            for name,phone in contact.items():
                 print(name," : ",phone)
+
+    elif choice == "3":
+        name=input("Search by name : ")
+        if name in contact:
+            print(name," : ",contact[name])
+        else:
+            print("Contact not Found ! ")
+
+    elif choice == "4":
+        name = input("Enter name to update: ")
+        if name in contact:
+            phone = input("Enter new phone number: ")
+            contact[name] = phone
+            print("Contact updated successfully!")
+        else:
+            print("Contact not found!")
+
+    elif choice == "5":
+        name = input("Enter name to delete: ")
+        if name in contact:
+            del contact[name]
+            print("Contact deleted successfully!")
+        else:
+            print("Contact not found!")
+    elif choice == "6":
+        print("Thank you for using contact book ")
+        break
+    else:
+        print(" 'Invalid input ' please enter choice bitween 1-6 ! ")
