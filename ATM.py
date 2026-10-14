@@ -1,7 +1,6 @@
-
+balance = 10000
+pin = 1234
 while True:
-    balance = 10000
-    pin = 1234
     enter_pin = int(input("Enter your PIN: "))
     if enter_pin == pin:
         print("\n----- ATM MENU -----")
@@ -16,14 +15,26 @@ while True:
             print("\n Thank you for using ATM ")
 
         elif choice == "2":
-            depo_amount = int(input("Enter your deposit amount : "))
-            if depo_amount > balance:
-                print("Entered amount greater than availble amount ! ")
-            elif depo_amount < 0:
-                print("Please Enter right amount ! ")
-            else :
-                balance  -= depo_amount
-                print("Your amount ",depo_amount , " deposite successfully ")
-                print("Availble Bank Balance = ",balance)
-                print("\n Thank you for using ATM ")
+            depo_amount = int(input("Enter your deposit amount: "))
 
+            if depo_amount <= 0:
+                print("Please enter a valid amount!")
+
+            else:
+                balance += depo_amount
+                print(depo_amount, "deposited successfully!")
+                print("Available Bank Balance =", balance)
+
+        elif choice == "3":
+            withdraw_amount = int(input("Enter withdrawal amount: "))
+
+            if withdraw_amount <= 0:
+                print("Please enter a valid amount!")
+
+            elif withdraw_amount > balance:
+                print("Insufficient balance!")
+
+            else:
+                balance -= withdraw_amount
+                print(withdraw_amount, "withdrawn successfully!")
+                print("Available Bank Balance =", balance)
